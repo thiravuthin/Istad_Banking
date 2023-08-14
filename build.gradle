@@ -1,0 +1,56 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.1.2'
+    id 'io.spring.dependency-management' version '1.1.2'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    sourceCompatibility = '17'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // thymeleaf Template Engine
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    // swagger
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
+    // mail
+    implementation 'org.springframework.boot:spring-boot-starter-mail'
+
+
+    // security
+//    implementation 'org.springframework.boot:spring-boot-starter-security'
+
+    // file
+
+    // Config mapstruct and lombok
+    annotationProcessor 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
+    implementation 'org.mapstruct:mapstruct:1.5.5.Final'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    //validation
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    //mybatis
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.2'
+    // devtool
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    // postgres
+    runtimeOnly 'org.postgresql:postgresql'
+    testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.2'
+
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
